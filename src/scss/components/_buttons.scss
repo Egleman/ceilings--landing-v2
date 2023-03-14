@@ -1,0 +1,39 @@
+.btn-blue {
+    background: #6567F2;
+    height: 48px;
+    transition: .3s all;
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+    &:hover {
+        background: #8485F5;
+    }
+    &:active {
+        background: #5152C2;
+    }
+}
+
+.btn-white {
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #6567F2;
+    border: 1px solid #6567F2;
+    transition: .3s all;
+    &:hover {
+        background: #F0F0FF;
+        border: 1px solid #2463EB;
+        color: #2463EB;
+    }
+    &:active {
+        background: #E0E1FC;
+        border: 1px solid #6567F2;
+        color: #6567F2;
+    }
+}
