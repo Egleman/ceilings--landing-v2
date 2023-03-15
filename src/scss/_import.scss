@@ -1,8 +1,10 @@
 @import './components/container';
 @import './components/title';
+@import './components/buttons';
 // @import './components/accordion';
-// @import './components/modal';
+@import './components/modal';
 @import './block/header';
+@import './block/banner';
 
 @import '../../node_modules/swiper/swiper';
 @import '../../node_modules//nouislider/dist/nouislider.css'

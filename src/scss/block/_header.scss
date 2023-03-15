@@ -39,14 +39,238 @@
             text-decoration: none;
         }
     }
+    &__bottom {
+        display: flex;
+        align-items: center;
+        padding: 20px 0px;
+    }
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        font-weight: 500;
+        font-size: 29.1719px;
+        line-height: 40px;
+        color: #0F172A;
+    }
+    &__smallnavbar {
+        position: relative;
+        display: none;
+        margin-left: 20px;
+        button {
+            border: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            // justify-content: center;
+            gap: 8px;
+            background: #E0E1FC;
+            border-radius: 4px;
+            height: 48px;
+            width: 125px;
+            transition: .5s all;
+            padding: 0px 20px;
+            p {
+                font-size: 18px;
+                line-height: 24px;
+                color: #6567F2;
+            }
+            svg {
+                width: 16px;
+                &:last-of-type {
+                    display: none;
+                }
+            }
+        }
+        &-clue {
+            position: absolute;
+            top: 97%;
+            background: #E0E1FC;
+            display: none;
+            // z-index: -1;
+            // // opacity: 0;
+            width: 125px;
+            transition: .5s all;
+            border-radius: 0px 0px 12px 12px;
+            overflow: hidden;
+            ul {
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                padding: 12px 0px;
+                li {
+                    a {
+                        font-size: 18px;
+                        line-height: 24px;
+                        color: #6567F2;
+                        height: 40px;
+                        // width: 105px;
+                        display: flex;
+                        align-items: center;
+                        white-space: nowrap;
+                        // justify-content: center;
+                        padding-left: 16px;
+                    }
+                }
+            }
+        }
+    }
+    &__navbar {
+        margin-left: 15px;
+    }
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border-radius: 4px;
+        padding: 10px 15px;
+        transition: .3s all;
+        font-size: 16px;
+        line-height: 20px;
+        color: #8485F5;
+        &:hover {
+            background: #E0E1FC;
+            color: #6567F2;
+        }
+    }
+    &__callback {
+        position: relative;
+        margin-left: auto;
+        button {
+            padding: 0;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 245px;
+            height: 48px;
+            background: #6567F2;
+            border-radius: 4px;
+            overflow: hidden;
+            color: #FFFFFF;
+            font-size: 18px;
+            line-height: 24px;
+            font-family: 'Manrope', sans-serif;
+            padding-left: 13px;
+            transition: .3s all;
+            span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #8485F5;
+                width: 48px;
+                height: 48px;
+                flex-shrink: 0;
+            }
+            &:hover {
+                background: #8485F5;
+            }
+            &:active {
+                background: #5152C2;
+            }
+        }
+        &-clue {
+            display: none;
+            position: absolute;
+            top: 58px;
+            width: 245px;
+            background: #F0F0FF;
+            border: 1px solid #E1E7EF;
+            border-radius: 4px;
+            padding: 20px 15px;
+            box-sizing: border-box;
+            z-index: 2;
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                li {
+                    display: flex;
+                    justify-content: center;
+                    a {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 8px;
+                        border-radius: 4px;
+                        padding: 10px 15px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    &__menu {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 52px;
+        background: #E0E1FC;
+        border-radius: 4px;
+    }
+    .header__smallnavbar.visible {
+        button {
+            // width: 290px;
+            border-radius: 4px 4px 0px 0px;
+            svg {
+                &:first-of-type {
+                    display: none;
+                }
+                &:last-of-type {
+                    display: initial;
+                }
+            }
+        }
+    }
+    .header__smallnavbar.active {
+        button {
+            width: 290px;
+            border-radius: 4px 4px 0px 0px;
+        }
+    }
+    .header__smallnavbar-clue.visible {
+        // opacity: 1;
+        z-index: 5;
+        display: block;
+        // width: 290px;
+    }
+    .header__smallnavbar-clue.active {
+        width: 290px;
+    }
 }
 
+@media (max-width: 1230px) {
+    .header {
+        &__navbar {
+            display: none;
+        }
+        &__smallnavbar {
+            display: block;
+        }
+    }
+}
 @media (max-width: 1022px) {
     .header {
         &__contact {
             p {
                 display: none;
             }
+        }
+        .header__smallnavbar.active {
+            button {
+                width: 240px;
+            }
+        }
+        .header__smallnavbar-clue.active {
+            width: 240px;
         }
     }
 }
@@ -59,10 +283,17 @@
                 }
             }
         }
+        &__callback {
+            display: none;
+        }
+        &__smallnavbar {
+            margin-left: auto;
+        }
     }
 }
 @media (max-width: 475px) {
     .header {
+        padding-top: 50px;
         &__worktime {
             p {
                 font-size: 14px;
@@ -75,6 +306,18 @@
         &__phone {
             font-size: 14px;
             line-height: 28px;
+        }
+        &__smallnavbar {
+            display: none;
+        }
+        &__menu {
+            display: flex;
+        }
+        &__bottom {
+            justify-content: space-between;
+        }
+        &__logo {
+            font-size: 24px;
         }
     }
 }

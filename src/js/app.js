@@ -3,8 +3,10 @@ import * as flsFunction from "./modules/function.js";
 flsFunction.isWebp();
 flsFunction.calcWidthScroll();
 flsFunction.mask();
-// flsFunction.openHeaderCallback();
-// flsFunction.rangeSlider();
+flsFunction.openHeaderCallback();
+flsFunction.openHiddenMenu();
+flsFunction.rangeSlider();
+flsFunction.customSelect();
 // flsFunction.tabs();
 // flsFunction.showMoreBlocks();
 // flsFunction.calc();
@@ -20,9 +22,9 @@ let im = new Inputmask({
     jitMasking: true,
     inputmode: 'tel'
 });
-// document.querySelectorAll('.masked').forEach(input => {
-//     im.mask(input);
-// })
+document.querySelectorAll('.masked').forEach(input => {
+    im.mask(input);
+})
 
 
 import Swiper, { FreeMode, Navigation, Scrollbar, Pagination, Autoplay, EffectCreative, Thumbs } from 'swiper';
