@@ -9,3 +9,15 @@
         color: #6567F2;
     }
 }
+@media (max-width: 798px) {
+    .title {
+        font-size: 35px;
+        line-height: 120%;
+    }
+}
+@media (max-width: 606px) {
+    .title {
+        font-size: 28px;
+        line-height: 120%;
+    }
+}

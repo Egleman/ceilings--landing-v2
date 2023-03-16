@@ -1,6 +1,8 @@
 //Проверка поддержки webp, добавление класса webp или no-webp для html
 import clickOutside from 'click-outside';
 import noUiSlider from 'nouislider';
+import ImageCompare from "image-compare-viewer";
+import Swiper, { FreeMode, Navigation, Scrollbar, Pagination, Autoplay, EffectCreative, Thumbs } from 'swiper';
 
 function animate({timing, draw, duration}) {
 
@@ -3276,22 +3278,24 @@ export const openHiddenMenu = () => {
 }
 
 export const rangeSlider = () => {
-    const slider = document.getElementById('slider-round');
-    const numb = document.querySelector('.banner__range-count > p > span');
+    const sliders = document.querySelectorAll('.slider-styled');
+    const numb = document.querySelectorAll('.banner__range-count > p > span');
     // console.log(numb)
-    noUiSlider.create(slider, { 
-        start: 25,
-        step: 1,
-        connect: 'lower',
-        padding: [1, 1],
-        range: {
-            'min': 0,
-            'max': 101
-        }
-    });
-    slider.noUiSlider.on('update', function (values, handle) {
-        numb.textContent = Math.round(values[handle]);
-    });
+    sliders.forEach((slider, index) => {
+        noUiSlider.create(slider, { 
+            start: 25,
+            step: 1,
+            connect: 'lower',
+            padding: [1, 1],
+            range: {
+                'min': 0,
+                'max': 81
+            }
+        });
+        slider.noUiSlider.on('update', function (values, handle) {
+            numb[index].textContent = Math.round(values[handle]);
+        });
+    })
 }
 
 export const scrollButtons = () => {
@@ -3326,6 +3330,11 @@ export const customSelect = () => {
     const value = document.querySelector('.banner__select');
     const list = document.querySelector('.banner__options');
     const options = document.querySelectorAll('.banner__option');
+
+    const value2 = document.querySelector('.calc__select');
+    const list2 = document.querySelector('.calc__options');
+    const options2 = document.querySelectorAll('.calc__option');
+
     value.addEventListener('click', () => {
         list.classList.toggle('active');
         value.classList.toggle('active');
@@ -3342,6 +3351,143 @@ export const customSelect = () => {
         option.addEventListener('click', () => {
             const span = option.querySelector('span');
             document.querySelector('.banner__value > p > span').textContent = span.textContent
+        })
+    })
+
+    value2.addEventListener('click', () => {
+        list2.classList.toggle('active');
+        value2.classList.toggle('active');
+    })
+    clickOutside(value2, function (e) {
+        if (list2.classList.contains('active')) {
+            list2.classList.remove('active');
+        }
+        if (value2.classList.contains('active')) {
+            value2.classList.remove('active');
+        }
+    });
+    options2.forEach(option => {
+        option.addEventListener('click', (e) => {
+            e.preventDefault();
+            const span = option.querySelector('p');
+            document.querySelector('.calc__value > p > span').textContent = span.textContent
+        })
+    })
+}
+
+export const beforAfter = () => {
+    const viewers = document.querySelectorAll(".image-compare");
+    const tabs = document.querySelectorAll('.production__tabs-link');
+    const tabsPanel = document.querySelector('.production__tabs');
+    const contentList = document.querySelectorAll('.production__content');
+    const swipersList = document.querySelectorAll('.production-swiper');
+
+    tabsPanel.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (e.target.closest('a')) {
+            const link = e.target.closest('a');
+            tabs.forEach((tab, index) => {
+                if (tab === link) {
+                    tab.classList.add('active');
+                    contentList[index].classList.add('active');
+                } else {
+                    if (tab.classList.contains('active')) {
+                        tab.classList.remove('active');
+                    }
+                    if (contentList[index].classList.contains('active')) {
+                        contentList[index].classList.remove('active');
+                    }
+                }
+            })
+        }
+    })
+
+    const options = {
+        controlColor: "#6567F2",
+        controlShadow: false,
+        addCircle: true,
+        addCircleBlur: false,
+        showLabels: false,
+        labelOptions: {
+          before: 'Before',
+          after: 'After',
+          onHover: false
+        },
+        smoothing: false,
+        smoothingAmount: 100,
+        hoverStart: false,
+        verticalMode: false,
+        startingPoint: 50,
+        fluidMode: false
+      };
+    viewers.forEach((element) => {
+      let view = new ImageCompare(element, options).mount();
+    });
+    swipersList.forEach((swiper, index) => {
+        swiper.classList.add(`production-swiper-${index}`);
+        document.querySelectorAll('.production__arrow_right')[index].classList.add(`prod-right-${index}`);
+        document.querySelectorAll('.production__arrow_left')[index].classList.add(`prod-left-${index}`);
+        document.querySelectorAll('.production__pagination')[index].classList.add(`production__pagination_${index}`)
+        const slider = new Swiper(`.production-swiper-${index}`, {
+            modules: [Navigation, Pagination],
+            // loop: true,
+            spaceBetween: 0,
+            slidesPerView: 1,
+            allowTouchMove: false,
+            // freeMode: true,
+            // watchSlidesProgress: true,
+            navigation: {
+                nextEl: `.prod-right-${index}`,
+                prevEl: `.prod-left-${index}`,
+            },
+            pagination: {
+                el: `.production__pagination_${index}`,
+                clickable: true
+            },
+            // breakpoints: {
+            //     0: {
+            //         slidesPerView: 3,
+            //     },
+            //     606: {
+            //         slidesPerView: 4,
+            //     }
+            // }
+        });
+    })
+    
+}
+
+export const calc = () => {
+    const calcSteps = document.querySelectorAll('.calc__step');
+    const nextBtn = document.querySelectorAll('[calc-next]');
+    const prevBtn = document.querySelectorAll('[calc-prev]');
+    nextBtn.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            calcSteps.forEach((step, index) => {
+                if (index === +btn.dataset.id) {
+                    step.classList.add('active');
+                } else {
+                    if (step.classList.contains('active')) {
+                        step.classList.remove('active')
+                    }
+                }
+            })
+        })
+    })
+    prevBtn.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            calcSteps.forEach((step, index) => {
+                if (index === +btn.dataset.id) {
+                    step.classList.add('active');
+                } else {
+                    if (step.classList.contains('active')) {
+                        step.classList.remove('active')
+                    }
+                }
+            })
         })
     })
 }

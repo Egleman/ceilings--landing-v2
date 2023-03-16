@@ -13,6 +13,9 @@
         max-width: 595px;
         width: 100%;
         margin: 50px 0px 40px 0px;
+        br {
+            display: none;
+        }
         span {
             color: #5152C2;
         }
@@ -178,6 +181,9 @@
         line-height: 120%;
         color: #48566A;
         margin-bottom: 30px;
+        br {
+            display: none;
+        }
         span {
             color: #5152C2;
         }
@@ -254,6 +260,9 @@
         &__title {
             font-size: 64px;
             line-height: 120%;
+            br {
+                display: block;
+            }
         }
         &__subtitle {
             max-width: 350px;
@@ -266,6 +275,98 @@
             bottom: initial;
             top: 50%;
             transform: translate(0, -80%);
+        }
+        &__right {
+            max-width: 100%;
+        }
+    }
+}
+@media (max-width: 798px) {
+    .banner {
+        &__title {
+            font-size: 50px;
+            line-height: 120%;
+            margin: 30px 0 20px 0;
+        }
+        &__subtitle {
+            margin-bottom: 30px;
+        }
+        &__background {
+            transform: translate(0,-100%);
+        }
+    }
+}
+@media (max-width: 500px) {
+    .banner {
+        &__title {
+            font-size: 40px;
+            line-height: 120%;
+            margin: 0 0 28px 0px;
+            br {
+                display: none;
+            }
+        }
+        &__background {
+            transform: translate(0,-116%);
+        }
+        &__right {
+            &-title {
+                font-size: 28px;
+                line-height: 120%;
+                margin-bottom: 28px;
+            }
+        }
+        &__price {
+            margin-bottom: 28px;
+            br {
+                display: block;
+            }
+        }
+    }
+}
+@media (max-width: 415px) {
+    .banner {
+        &__right {
+            &-title {
+                text-align: left;
+            }
+        }
+        &__value {
+            p {
+                span {
+                    max-width: 160px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 350px) {
+    .banner {
+        &__title {
+            font-size: 34px;
+        }
+        &__right {
+            &-title {
+                font-size: 24px;
+                line-height: 120%;
+            }
+        }
+        &__price {
+            font-size: 20px;
+            line-height: 120%;
+        }
+        &__counter-people {
+            .text {
+                font-size: 20px;
+                line-height: 120%;
+            }
+        }
+    }
+}
+@media (max-width: 331px) {
+    .banner {
+        &__background {
+            transform: translate(0,-116%);
         }
     }
 }

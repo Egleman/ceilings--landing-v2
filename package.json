@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "click-outside": "^2.0.2",
+    "image-compare-viewer": "^1.5.0",
     "nouislider": "^15.7.0",
     "slick-carousel": "^1.8.1",
     "three": "^0.146.0"

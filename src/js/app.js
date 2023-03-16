@@ -7,9 +7,10 @@ flsFunction.openHeaderCallback();
 flsFunction.openHiddenMenu();
 flsFunction.rangeSlider();
 flsFunction.customSelect();
+flsFunction.beforAfter();
 // flsFunction.tabs();
 // flsFunction.showMoreBlocks();
-// flsFunction.calc();
+flsFunction.calc();
 // flsFunction.playVideo();
 // flsFunction.accordion();
 // flsFunction.scrollButtons();
@@ -27,26 +28,26 @@ document.querySelectorAll('.masked').forEach(input => {
 })
 
 
-import Swiper, { FreeMode, Navigation, Scrollbar, Pagination, Autoplay, EffectCreative, Thumbs } from 'swiper';
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     function hasTouchDevice() {
-//       return !!('ontouchstart' in window || navigator.maxTouchPoints);
-//     }
-//     if (!hasTouchDevice()) {
-//       const toUp = document.querySelectorAll('.calc__card-countwr a');
-//       toUp.forEach(link => {
-//         link.classList.add('hover');
-//         link.onmouseenter = function(){
-//             link.classList.add('hover');
-//           }
-//         link.onmouseleave = function() {
-//             link.classList.remove('hover');
-//         }
-//       })
+
+document.addEventListener('DOMContentLoaded', function() {
+    function hasTouchDevice() {
+      return !!('ontouchstart' in window || navigator.maxTouchPoints);
+    }
+    if (!hasTouchDevice()) {
+      const toUp = document.querySelectorAll('.calc__counters-wr button');
+      toUp.forEach(link => {
+        link.classList.add('hover');
+        link.onmouseenter = function(){
+            link.classList.add('hover');
+          }
+        link.onmouseleave = function() {
+            link.classList.remove('hover');
+        }
+      })
       
-//     }
-//   });
+    }
+  });
 
 // var swiper = new Swiper(".about-thumb", {
 //     modules: [FreeMode],
