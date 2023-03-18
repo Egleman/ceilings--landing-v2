@@ -1,4 +1,8 @@
 .header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background: #fff;
     &__top {
         display: flex;
         align-items: center;
@@ -293,7 +297,7 @@
 }
 @media (max-width: 475px) {
     .header {
-        padding-top: 50px;
+        padding-top: 15px;
         &__worktime {
             p {
                 font-size: 14px;

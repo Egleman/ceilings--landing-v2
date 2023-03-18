@@ -1,9 +1,19 @@
 <footer class="footer">
-    
+    <div class="container">
+        <div class="footer__wrapper">
+            <p>2023 © Все права защищены</p>
+            <a href="#header" scroll class="btn-white">
+                Наверх
+                <svg width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.46967 0.485783C4.76256 0.19289 5.23744 0.19289 5.53033 0.485783L9.53033 4.48578C9.82322 4.77868 9.82322 5.25355 9.53033 5.54644C9.23744 5.83934 8.76256 5.83934 8.46967 5.54644L5.75 2.82677V19.0161C5.75 19.4303 5.41421 19.7661 5 19.7661C4.58579 19.7661 4.25 19.4303 4.25 19.0161V2.82677L1.53033 5.54644C1.23744 5.83934 0.762563 5.83934 0.46967 5.54644C0.176777 5.25355 0.176777 4.77868 0.46967 4.48578L4.46967 0.485783Z" fill="#8485F5"/>
+                </svg>                    
+            </a>
+        </div>
+    </div>
 </footer>
 <div class="hidden-menu" id="hidden-menu">
     <div class="hidden-menu__top">
-        <a href="#" class="hidden-menu__logo">
+        <a href="#header" scroll class="hidden-menu__logo">
             <svg width="50" height="41" viewBox="0 0 50 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17.3327 39.8479C13.322 30.6987 17.3116 19.966 26.4058 15.6883L41.3306 8.66814C45.3413 17.8173 41.3517 28.55 32.2575 32.8277L17.3327 39.8479Z" fill="#6567F2" stroke="#73A3ED"/>
                 <path d="M11.4371 36.0143C5.69572 27.8393 7.4832 16.5295 15.5515 10.5373L28.7925 0.703333C34.5339 8.87827 32.7464 20.1881 24.6781 26.1803L11.4371 36.0143Z" fill="#F59F0A" stroke="#73A3ED"/>
@@ -19,12 +29,12 @@
     <nav class="hidden-menu__navbar">
         <ul class="hidden-menu__list">
             <li class="hidden-menu__item">
-                <a href="#" class="hidden-menu__link btn-white">
+                <a href="#production" scroll class="hidden-menu__link btn-white">
                     Потолки
                 </a>
             </li>
             <li class="hidden-menu__item">
-                <a href="#" class="hidden-menu__link btn-white">
+                <a href="#calc" scroll class="hidden-menu__link btn-white">
                     <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M0.207031 1.79159C0.207031 0.98617 0.859949 0.333252 1.66536 0.333252H13.332C14.1374 0.333252 14.7904 0.98617 14.7904 1.79159V3.45825C14.7904 4.26367 14.1374 4.91658 13.332 4.91658H1.66536C0.859949 4.91658 0.207031 4.26367 0.207031 3.45825V1.79159ZM1.66536 1.58325C1.55031 1.58325 1.45703 1.67653 1.45703 1.79159V3.45825C1.45703 3.57331 1.55031 3.66659 1.66536 3.66659H13.332C13.4471 3.66659 13.5404 3.57331 13.5404 3.45825V1.79159C13.5404 1.67653 13.4471 1.58325 13.332 1.58325H1.66536Z" fill="#F7B23B"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M0.207031 8.45825C0.207031 7.65284 0.859949 6.99992 1.66536 6.99992H6.66536C7.47078 6.99992 8.1237 7.65284 8.1237 8.45825V13.4583C8.1237 14.2637 7.47078 14.9166 6.66536 14.9166H1.66536C0.859949 14.9166 0.207031 14.2637 0.207031 13.4583V8.45825ZM1.66536 8.24992C1.55031 8.24992 1.45703 8.34319 1.45703 8.45825V13.4583C1.45703 13.5733 1.55031 13.6666 1.66536 13.6666H6.66536C6.78042 13.6666 6.8737 13.5733 6.8737 13.4583V8.45825C6.8737 8.34319 6.78042 8.24992 6.66536 8.24992H1.66536Z" fill="#F7B23B"/>
@@ -34,12 +44,12 @@
                 </a>
             </li>
             <li class="hidden-menu__item">
-                <a href="#" class="hidden-menu__link btn-white">
+                <a href="#price" scroll class="hidden-menu__link btn-white">
                     Прайс-лист
                 </a>
             </li>
             <li class="hidden-menu__item">
-                <a href="#" class="hidden-menu__link btn-white">
+                <a href="#contacts" scroll class="hidden-menu__link btn-white">
                     Контакты
                 </a>
             </li>
@@ -74,7 +84,7 @@
         </li>
     </ul>
 </div>
-<!-- <div class="overlay" id="modal-callback">
+<div class="overlay" id="modal-callback">
     <div class="modal">
         <a href="#" class="modal__close" toggle="#modal-callback">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,30 +92,28 @@
             </svg>                
         </a>
         <div class="modal__title">
-            Вызвать замерщика
+            Обратная связь
         </div>
         <div class="modal__subtitle">
-            Мы перезвоним вам и договоримся<br> 
-            о встрече с замерщиком
+            Оставьте ваши контактные данные и мы свяжемся с вами
         </div>
         <form class="modal__form">
-            <div class="modal__form-input">
-                <svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.74988 4.82764C3.74988 2.48043 5.65267 0.577637 7.99988 0.577637C10.3471 0.577637 12.2499 2.48043 12.2499 4.82764C12.2499 7.17485 10.3471 9.07764 7.99988 9.07764C5.65267 9.07764 3.74988 7.17485 3.74988 4.82764ZM7.99988 2.07764C6.4811 2.07764 5.24988 3.30885 5.24988 4.82764C5.24988 6.34642 6.4811 7.57764 7.99988 7.57764C9.51867 7.57764 10.7499 6.34642 10.7499 4.82764C10.7499 3.30885 9.51867 2.07764 7.99988 2.07764Z" fill="#94A3B8"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.562275 15.8154C1.50548 12.5996 4.47733 10.2501 7.99988 10.2501C11.5224 10.2501 14.4943 12.5996 15.4375 15.8154C15.6741 16.6221 15.432 17.3826 14.9429 17.9171C14.4649 18.4395 13.754 18.7501 12.9999 18.7501H2.99988C2.24579 18.7501 1.53491 18.4395 1.05683 17.9171C0.567718 17.3826 0.32567 16.6221 0.562275 15.8154ZM7.99988 11.7501C5.1611 11.7501 2.76255 13.6433 2.00164 16.2376C1.92737 16.4908 1.992 16.7171 2.16342 16.9045C2.34589 17.1039 2.64941 17.2501 2.99988 17.2501H12.9999C13.3504 17.2501 13.6539 17.1039 13.8363 16.9045C14.0078 16.7171 14.0724 16.4908 13.9981 16.2376C13.2372 13.6433 10.8387 11.7501 7.99988 11.7501Z" fill="#94A3B8"/>
-                </svg>                    
-                <input type="text" placeholder="Имя">
-            </div>
-            <div class="modal__form-input">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.25 3C0.25 1.48122 1.48122 0.25 3 0.25H6.27924C7.03249 0.25 7.70124 0.732002 7.93944 1.4466L9.43725 5.94004C9.71265 6.76624 9.33862 7.66921 8.55968 8.05869L6.96962 8.85371C7.92192 10.6215 9.37853 12.0781 11.1463 13.0304L11.9413 11.4403C12.3308 10.6614 13.2338 10.2874 14.06 10.5628L18.5534 12.0606C19.268 12.2988 19.75 12.9675 19.75 13.7208V17C19.75 18.5188 18.5188 19.75 17 19.75H16C7.30152 19.75 0.25 12.6985 0.25 4V3ZM3 1.75C2.30964 1.75 1.75 2.30964 1.75 3V4C1.75 11.8701 8.12994 18.25 16 18.25H17C17.6904 18.25 18.25 17.6904 18.25 17V13.7208C18.25 13.6132 18.1811 13.5176 18.0791 13.4836L13.5856 11.9858C13.4676 11.9464 13.3386 11.9999 13.283 12.1111L12.1543 14.3684C11.9743 14.7284 11.5422 14.8822 11.1752 14.7167C8.56377 13.5393 6.46071 11.4362 5.28329 8.82476C5.11784 8.45781 5.27157 8.02569 5.6316 7.84568L7.88886 6.71705C8.00014 6.66141 8.05357 6.53241 8.01422 6.41438L6.51641 1.92094C6.48238 1.81886 6.38685 1.75 6.27924 1.75H3Z" fill="#94A3B8"/>
-                </svg>                                        
-                <input type="text" class="masked" placeholder="8 (___) ___-__-__">
-            </div>
-            <button type="submit">Отправить</button>
+            <input type="text" placeholder="Имя">
+            <input type="text" class="masked" placeholder="Телефон">
+            <textarea placeholder="Комментарий"></textarea>
+            <button type="submit" class="btn-blue">Отправить</button>
         </form>
     </div>
-</div> -->
+</div>
+<div class="overlay overlay_thx" id="modal-thx">
+    <div class="thx">
+        <div class="thx__title">
+            Спасибо!
+        </div>
+        <div class="thx__subtitle">Ваше обращение отправлено</div>
+        <a href="#" toggle="#modal-thx" class="btn-blue">Закрыть</a>
+    </div>
+</div>
 <script src="@@src"></script>
 </body>
 </html>

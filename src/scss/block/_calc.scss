@@ -1,5 +1,6 @@
 .calc {
     padding: 36px 0px;
+    position: relative;
     &__title {
         max-width: 865px;
         width: 100%;
@@ -80,23 +81,33 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border-radius: 100%;
-                overflow: hidden;
-                background: #6567F2;
+                background: #FFFFFF;
+                border: 1px solid #CBD5E1;
+                border-radius: 4px;
                 width: 20px;
+                box-sizing: border-box;
                 height: 20px;
                 flex-shrink: 0;
-                span {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 100%;
-                    overflow: hidden;
-                    width: 8px;
-                    height: 8px;
-                    flex-shrink: 0;
-                    background: #6567F2;
-                }
+                // display: flex;
+                // align-items: center;
+                // justify-content: center;
+                // border-radius: 100%;
+                // overflow: hidden;
+                // background: #6567F2;
+                // width: 20px;
+                // height: 20px;
+                // flex-shrink: 0;
+                // span {
+                //     display: flex;
+                //     align-items: center;
+                //     justify-content: center;
+                //     border-radius: 100%;
+                //     overflow: hidden;
+                //     width: 8px;
+                //     height: 8px;
+                //     flex-shrink: 0;
+                //     background: #6567F2;
+                // }
             }
             .text {
                 font-weight: 400;
@@ -107,9 +118,12 @@
         }
         input:checked + label {
             .round {
-                span {
-                    background: #fff;
-                }
+                background: #6567F2;
+                border-radius: 4px;
+                border: 1px solid #6567F2;
+                // span {
+                //     background: #fff;
+                // }
             }
         }
         &-buttons {
@@ -328,6 +342,11 @@
                 border-radius: 4px;
                 border: none;
                 white-space: nowrap;
+            }
+            button.disabled {
+                background: #6567F2 !important;
+                opacity: 0.3 !important;
+                pointer-events: none;
             }
         }
     }

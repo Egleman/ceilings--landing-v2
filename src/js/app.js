@@ -11,10 +11,11 @@ flsFunction.beforAfter();
 // flsFunction.tabs();
 // flsFunction.showMoreBlocks();
 flsFunction.calc();
-// flsFunction.playVideo();
-// flsFunction.accordion();
-// flsFunction.scrollButtons();
-// flsFunction.openModal();
+flsFunction.playVideo();
+flsFunction.accordion();
+flsFunction.presentation();
+flsFunction.scrollButtons();
+flsFunction.openModal();
 
 let im = new Inputmask({
     mask: '8 (999) 999-99-99',

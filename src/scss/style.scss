@@ -29,6 +29,14 @@ body {
     // overflow-x: hidden;
     // min-width: 320px;
 }
+main {
+    padding-top: 140px;
+}
+@media (max-width: 475px) {
+    main {
+        padding-top: 149px;
+    }
+}
 @media (max-width: 320px) {
     body {
         overflow-x: hidden;
