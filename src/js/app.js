@@ -16,6 +16,7 @@ flsFunction.accordion();
 flsFunction.presentation();
 flsFunction.scrollButtons();
 flsFunction.openModal();
+flsFunction.submitForms();
 
 let im = new Inputmask({
     mask: '8 (999) 999-99-99',

@@ -3282,8 +3282,33 @@ export const openHiddenMenu = () => {
 
 export const rangeSlider = () => {
     const sliders = document.querySelectorAll('.slider-styled');
-    const numb = document.querySelectorAll('.banner__range-count > p > span');
-    // console.log(numb)
+    const numb = document.querySelectorAll('.banner__range-count');
+    const price = document.querySelectorAll('[data-span="summ"]');
+    const tabPanel = document.querySelectorAll('.calc__location')[1];
+    const inputs = tabPanel.querySelectorAll('input');
+    const sumArray = [489, 0, 0];
+    let square = 25;
+    let summ = 0;
+
+    tabPanel.addEventListener('click', (e) => {
+        if (e.target.closest('input')) {
+            const input = e.target.closest('input');
+            inputs.forEach((inp, index) => {
+                if (inp === input) {
+                    if (input.checked) {
+                        sumArray[index] = 489;
+                    } else {
+                        sumArray[index] = 0;
+                    }
+                }
+                summ = sumArray.reduce((accumulator, number) => {
+                    return accumulator + (number * square)
+                }, 0)
+                document.querySelector('.calc__form-label-2 > p').textContent = `${summ} руб.`
+            })
+        }
+    })
+
     sliders.forEach((slider, index) => {
         noUiSlider.create(slider, { 
             start: 25,
@@ -3295,9 +3320,23 @@ export const rangeSlider = () => {
                 'max': 81
             }
         });
+        
         slider.noUiSlider.on('update', function (values, handle) {
-            numb[index].textContent = Math.round(values[handle]);
+            numb[index].value = `${Math.round(values[handle])} м²`
+            square = Math.round(values[handle])
+            // numb[index].value = numb[index].value.replace((/[^\d.]/g, `${Math.round(values[handle])} м²`));
+            price[index].textContent = `${Math.round(values[handle]) * 450} руб.`;
+            summ = sumArray.reduce((accumulator, number) => {
+                return accumulator + (number * Math.round(values[handle]))
+            }, 0)
+            document.querySelector('.calc__form-label-2 > p').textContent = `${summ} руб.`
         });
+        numb[index].addEventListener('input', () => {
+            numb[index].value = numb[index].value.replace(/[^\d.]/g, ``);
+        })
+        numb[index].addEventListener('change', () => {
+            slider.noUiSlider.set(numb[index].value);
+        })
     })
 }
 
@@ -3357,7 +3396,9 @@ export const customSelect = () => {
     options.forEach(option => {
         option.addEventListener('click', () => {
             const span = option.querySelector('span');
+            const svg = option.querySelector('svg');
             document.querySelector('.banner__value > p > span').textContent = span.textContent
+            document.querySelector('.banner__value > p > svg').outerHTML = svg.outerHTML
         })
     })
 
@@ -3377,7 +3418,10 @@ export const customSelect = () => {
         option.addEventListener('click', (e) => {
             e.preventDefault();
             const span = option.querySelector('p');
+            const svg = option.querySelector('svg');
+            console.log(svg)
             document.querySelector('.calc__value > p > span').textContent = span.textContent
+            document.querySelector('.calc__value > p > svg').outerHTML = svg.outerHTML
         })
     })
 }
@@ -3595,4 +3639,61 @@ export const presentation = () => {
             disableOnInteraction: false
         },
     });
+}
+
+export const submitForms = () => {
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let verify = [];
+            const inputs = form.querySelectorAll('input');
+            inputs.forEach((input, index) => {
+                if (input.value === '') {
+                    verify.push(0);
+                    input.classList.add('error');
+                    setTimeout(() => {
+                        if (input.classList.contains('error')) {
+                            input.classList.remove('error')
+                        }
+                    }, 5000)
+                } else {
+                    if (index === 0) {
+                        verify.push(1)
+                    } else {
+                        if (input.value.length - input.value.replace(/\d/gm, '').length === 11) {
+                            verify.push(1)
+                        } else {
+                            input[index].classList.add('error');
+                            verify.push(0)
+                            setTimeout(() => {
+                                if (input[index].classList.contains('error')) {
+                                    input[index].classList.remove('error')
+                                }
+                            }, 5000)
+                        }
+                    }
+                }
+                input.addEventListener('focus', () => {
+                    if (input.classList.contains('error')) {
+                        input.classList.remove('error')
+                    }
+                })
+            })
+            if (verify.every(elem => elem === 1)) {
+                document.querySelectorAll('.overlay').forEach(modal => {
+                    if (modal.classList.contains('active')) {
+                        modal.classList.remove('active');
+                    }
+                })
+                document.getElementById('modal-thx').classList.add('active');
+                inputs.forEach(input => {
+                    input.value = '';
+                })
+                verify.length = 0;
+            } else {
+                verify.length = 0;
+            }
+        })
+    })
 }

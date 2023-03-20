@@ -191,13 +191,17 @@
             align-items: center;
             padding: 0px 24px;
             height: 48px;
-            p {
-                font-weight: 500;
-                font-size: 20px;
-                line-height: 150%;
-                letter-spacing: -0.01em;
-                color: #171717;
-            }
+            border: none;
+            width: 100%;
+            box-sizing: border-box;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 150%;
+            letter-spacing: -0.01em;
+            color: #171717;
+            // p {
+                
+            // }
         }
     }
     &__steps {
@@ -211,7 +215,7 @@
         }
     }
     &__price {
-        font-size: 24px;
+        font-size: 22px;
         line-height: 120%;
         color: #48566A;
         margin-bottom: 30px;

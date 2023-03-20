@@ -77,5 +77,8 @@ label, button {
         display: none
     }
 }
+.error {
+    border: 1px solid #F87272 !important;
+}
 
 @import './import';
