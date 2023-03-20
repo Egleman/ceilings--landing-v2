@@ -3307,7 +3307,7 @@ export const scrollButtons = () => {
     scrollLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            const blockId = e.target.getAttribute('href');
+            const blockId = link.getAttribute('href');
             if (hiddenMenu.classList.contains('active')) {
                 hiddenMenu.classList.remove('active');
             }

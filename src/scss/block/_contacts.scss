@@ -107,6 +107,9 @@
             line-height: 20px;
             color: #334155;
             height: 100px;
+            max-width: 390px !important;
+            width: 100% !important;
+            resize: none;
             &::placeholder {
                 color: #94A3B8;
             }
@@ -130,6 +133,11 @@
             gap: 80px;
             &-right {
                 max-width: 100%;
+            }
+        }
+        &__form {
+            textarea {
+                max-width: 718px !important;
             }
         }
     }

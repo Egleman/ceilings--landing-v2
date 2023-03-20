@@ -171,7 +171,7 @@ body {
 }
 
 main {
-  padding-top: 140px;
+  position: relative;
 }
 
 ol,
@@ -815,7 +815,8 @@ button {
 }
 
 .header {
-  position: fixed;
+  position: sticky;
+  top: 0;
   width: 100%;
   z-index: 100;
   background: #fff;
@@ -2811,6 +2812,9 @@ button {
   line-height: 20px;
   color: #334155;
   height: 100px;
+  max-width: 390px !important;
+  width: 100% !important;
+  resize: none;
 }
 
 .contacts__form textarea::-moz-placeholder {
@@ -3312,6 +3316,10 @@ button {
     max-width: 100%;
   }
 
+  .contacts__form textarea {
+    max-width: 718px !important;
+  }
+
   .bottom-nav__wrapper {
     justify-content: center;
   }
@@ -3490,6 +3498,13 @@ button {
   .accordion__header p {
     font-size: 20px;
     line-height: 32px;
+  }
+
+  .accordion__content {
+    padding-top: 20px;
+    font-size: 18px;
+    line-height: 130%;
+    color: #334155;
   }
 
   .brand {
@@ -3760,10 +3775,6 @@ button {
 }
 
 @media (max-width: 475px) {
-  main {
-    padding-top: 149px;
-  }
-
   .hidden-menu.active {
     display: block;
   }
@@ -3896,6 +3907,13 @@ button {
 }
 
 @media (max-width: 375px) {
+  .accordion__content {
+    padding-top: 20px;
+    font-size: 16px;
+    line-height: 130%;
+    color: #334155;
+  }
+
   .overlay_thx {
     align-items: flex-end;
   }
